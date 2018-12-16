@@ -5,11 +5,13 @@
   "main": "public/electron.js",
   "dependencies": {
     "electron-is-dev": "^1.0.1",
+    "grommet": "^2.2.1",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
     "react-scripts": "2.1.1",
-    "redux": "^4.0.1"
+    "redux": "^4.0.1",
+    "styled-components": "^4.1.2"
   },
   "scripts": {
     "start": "concurrently \"cross-env BROWSER=none yarn react-scripts start\" \"wait-on http://localhost:3000 && electron .\"",

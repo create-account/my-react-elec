@@ -1,28 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grommet, Box } from 'grommet';
+import { Sidebar } from 'grommet-icons';
+import { connect } from 'react-redux';
+import AppBar from './components/AppBar';
+import SideBox from './components/SideBox';
+
+const theme = {
+  global: {
+    // colors: {
+    //   brand: '#0096D6'
+    // },
+    font: {
+      family: 'Roboto',
+      size: '14px',
+      height: '20px',
+    },
+  },
+};
 
 class App extends Component {
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload to see the magic!
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
+      <Grommet theme={theme}>
+        <Box fill>
+          <AppBar
+            name='Easy Art Maker' 
+            icon={<Sidebar />}
+          />
+          <SideBox
+            show={this.props.sidebar}
           >
-            Learn React
-          </a>
-        </header>
-      </div>
+            Sidebar is gere
+          </SideBox>
+        </Box>
+      </Grommet>
     );
   }
 }
 
-export default App;
+const mapStateToProps = state => {
+  console.log(state);
+  return state;
+}
+
+export default connect(mapStateToProps)(App);

@@ -9,3 +9,10 @@ export const selectProject = (project) => {
         payload: project
     };
 }
+
+export const toggleSideBox = () => {
+    return {
+        type: 'TOGGLE_SIDEBOX',
+        payload: null
+    };
+}
